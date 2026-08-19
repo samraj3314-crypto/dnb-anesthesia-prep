@@ -1,0 +1,10 @@
+{
+  "name": "DNB Anaesthesia Prep",
+  "short_name": "DNB Prep",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0b5cff",
+  "description": "DNB Anaesthesia competitive exam preparation app",
+  "icons": [{"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

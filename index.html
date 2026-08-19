@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b5cff" />
+  <meta name="description" content="DNB Anaesthesia competitive exam question practice PWA" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>DNB Anaesthesia Prep</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">DNB Anaesthesia Prep</div>
+      <div class="subtitle">Competitive-exam style practice</div>
+    </div>
+    <div class="header-actions">
+      <button id="installBtn" class="secondary hidden">Install</button>
+      <button id="notifyBtn" class="secondary">Enable notifications</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="homeScreen" class="screen active">
+      <div class="hero card">
+        <div>
+          <span class="pill">DAILY CHALLENGE</span>
+          <h1 id="dailyQuestionTitle">Loading today's question…</h1>
+          <p id="dailyQuestionText" class="question-preview"></p>
+        </div>
+        <button id="startDailyBtn" class="primary">Answer daily question</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat card"><span>Attempted</span><strong id="statAttempted">0</strong></div>
+        <div class="stat card"><span>Correct</span><strong id="statCorrect">0%</strong></div>
+        <div class="stat card"><span>Streak</span><strong id="statStreak">0 days</strong></div>
+        <div class="stat card"><span>Questions</span><strong id="statTotal">0</strong></div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2>Question Bank</h2>
+          <p>Choose a subject, then practise in competitive-exam mode.</p>
+        </div>
+        <input id="searchInput" type="search" placeholder="Search section…" aria-label="Search section" />
+      </div>
+      <div id="sectionGrid" class="section-grid"></div>
+
+      <div class="card schedule-card">
+        <div class="section-heading compact">
+          <div>
+            <h2>Study Schedule</h2>
+            <p>Set a daily reminder time.</p>
+          </div>
+        </div>
+        <div class="schedule-row">
+          <input id="scheduleTime" type="time" value="20:00" />
+          <select id="scheduleMode">
+            <option value="daily">Daily question</option>
+            <option value="mock">Mock test reminder</option>
+          </select>
+          <button id="saveScheduleBtn" class="primary">Save reminder</button>
+        </div>
+        <p id="scheduleStatus" class="muted"></p>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="quiz-header card">
+        <div>
+          <button id="backHomeBtn" class="link-btn">← Home</button>
+          <div id="quizTitle" class="quiz-title">Quiz</div>
+        </div>
+        <div class="timer-box">
+          <span>TIME</span>
+          <strong id="timer">05:00</strong>
+        </div>
+      </div>
+
+      <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+      <div id="questionCounter" class="muted counter"></div>
+
+      <div class="card question-card">
+        <div id="questionMeta" class="pill small"></div>
+        <h2 id="questionText">Question</h2>
+        <div id="options" class="options"></div>
+        <div class="question-actions">
+          <button id="nextBtn" class="primary" disabled>Next</button>
+          <button id="finishBtn" class="secondary">Finish test</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="card result-card">
+        <span class="pill">RESULT</span>
+        <h1 id="resultTitle">Test complete</h1>
+        <div id="resultScore" class="big-score">0/0</div>
+        <p id="resultMessage"></p>
+        <div class="result-actions">
+          <button id="reviewBtn" class="secondary">Review answers</button>
+          <button id="homeResultBtn" class="primary">Back to home</button>
+        </div>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
